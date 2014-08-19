@@ -1,0 +1,6 @@
+# Чтобы всегда происходил редирект на домен example.ru
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{HTTP_HOST} !^example\.ru$ [NC]
+  RewriteRule ^ http://example%{REQUEST_URI} [L,R=301]
+</IfModule>
